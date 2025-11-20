@@ -1,0 +1,43 @@
+body { background: #f7f7fb; color: #222; }
+.hero {
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.no-hero { background: linear-gradient(180deg,#f8f9fb 0%,#f0f1f6 100%); min-height:260px; display:flex; align-items:center; }
+.hover-card { transition: transform .18s ease, box-shadow .18s ease; }
+.hover-card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(20,20,50,0.12); }
+.text-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+img.rounded { border-radius: 8px; }
+.input-group { max-width:720px; margin: 0 auto; }
+/* HERO BACKGROUND IMAGE */
+.hero-section {
+    background-image: url('/static/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Overlay for readability */
+    position: relative;
+    color: white;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);   /* dark overlay */
+    z-index: 0;
+}
+
+.hero-section > * {
+    position: relative;
+    z-index: 1;   /* keeps text visible */
+}
+

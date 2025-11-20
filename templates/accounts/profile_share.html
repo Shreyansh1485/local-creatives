@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-md-8 text-center">
+  <h2>Your public profile link</h2>
+  <div class="input-group mb-3">
+    <input id="share-url" type="text" class="form-control" value="{{ share_url }}" readonly>
+    <div class="input-group-append"><button id="copy-btn" class="btn btn-outline-secondary">Copy link</button></div>
+  </div>
+  <p id="msg" class="text-success" style="display:none;">Copied to clipboard!</p>
+</div></div>
+<script>
+document.getElementById('copy-btn').addEventListener('click', function(){
+  const el = document.getElementById('share-url'); el.select(); navigator.clipboard.writeText(el.value).then(()=>{document.getElementById('msg').style.display='block';});
+});
+</script>
+{% endblock %}
